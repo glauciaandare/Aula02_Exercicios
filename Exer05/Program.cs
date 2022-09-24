@@ -6,35 +6,23 @@
 
 using System;
 using System.Globalization;
+using System.Runtime.Serialization;
 
 namespace Exer05 {
     internal class Program {
         static void Main(string[] args)
         {
-            int posicao;
-            double[] vet;
+            float[] numeros = { 12, 3, 4 };
+            Console.WriteLine($"Media: {calcularMedia(numeros)}");
 
-            posicao = Convert.ToInt32(Console.ReadLine());
-            vet = new double[posicao];
+        }
 
-            string[] s = Console.ReadLine().Split(' ');
-            for (int i = 0; i < posicao; i++) {
-
-               vet[i] = double.Parse(s[i], CultureInfo.InvariantCulture);
+        static float calcularMedia(float[] n { 
+            float media = 0;
+            media = (n[0] + n[1] + n[2]) / 3;
+            return media;
             
             }
-
-            double soma = 0;
-            for (int i = 0; i < posicao; i++) { 
-                
-                soma += vet[i];
-            }   
-
-            double media = soma / posicao;
-
-            Console.WriteLine(media.ToString("F2", CultureInfo.InvariantCulture));
-
-            Console.ReadLine();
+        
         }
-    }
 }
