@@ -8,21 +8,27 @@ using System;
 using System.Globalization;
 using System.Runtime.Serialization;
 
-namespace Exer05 {
-    internal class Program {
-        static void Main(string[] args)
+namespace Exer05
+{
+    internal class Program
+    {
+        private static void Main(string[] args)
         {
             float[] numeros = { 12, 3, 4 };
-            Console.WriteLine($"Media: {calcularMedia(numeros)}");
+            Console.WriteLine($"Media: {CalcularMedia(numeros)}");
 
         }
 
-        static float calcularMedia(float[] n { 
+        private static float CalcularMedia(float[] n)
+        {
             float media = 0;
-            media = (n[0] + n[1] + n[2]) / 3;
-            return media;
+            for (int i = 0; i < n.Length; i++)
             
-            }
-        
+                media += n[i];
+                media /= n.Length;
+                return media;
+            
+
         }
+    }
 }
